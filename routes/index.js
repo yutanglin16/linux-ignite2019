@@ -7,8 +7,9 @@ var router = express.Router();
 // });
 
 router.get('/', function(req, res, next) {
-  console.error("Error 400!");
-  res.status(400).send('Bad Request')
+  console.error("New 403");
+  setImmediate(() => { next(new Error('woops')); });
+  res.status(403).send('Bad Request')
 });
 
 module.exports = router;
