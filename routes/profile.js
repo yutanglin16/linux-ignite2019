@@ -9,6 +9,7 @@ var people = require("../people.json");
 
 router.get("/", (req, res) => {
   const person = people.profiles.find(p => p.id === req.query.id);
+  console.logs("Hello, " + person.firstname);
   res.render("profile", {
     title: `About ${person.firstname} ${person.lastname}`,
     person
