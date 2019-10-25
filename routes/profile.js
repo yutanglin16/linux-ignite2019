@@ -8,9 +8,10 @@ var people = require("../people.json");
 // });
 
 router.get("/", (req, res) => {
-  res.render("users", {
-    title: "Homepage",
-    people: people.profiles
+  const person = people.profiles.find(p => p.id === req.query.id);
+  res.render("profile", {
+    title: `About ${person.firstname} ${person.lastname}`,
+    person
   });
 });
 
