@@ -9,6 +9,7 @@ var router = express.Router();
 router.get('/', function(req, res, next) {
   console.log("Whoops");
   setImmediate(() => { next(new Error('woops')); });
+  res.status(400).send('Bad Request')
 });
 
 module.exports = router;
