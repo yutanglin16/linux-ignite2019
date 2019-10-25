@@ -8,8 +8,7 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
   console.error("Whoops");
-  setImmediate(() => { next(new Error('woops')); });
-  res.status(400).send('Bad Request')
+  res.status(500).send('Bad Request')
 });
 
 module.exports = router;
