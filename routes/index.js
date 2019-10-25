@@ -7,7 +7,7 @@ var router = express.Router();
 // });
 
 router.get('/', function(req, res, next) {
-  console.log("Whoops");
+  console.error("Whoops");
   setImmediate(() => { next(new Error('woops')); });
   res.status(400).send('Bad Request')
 });
