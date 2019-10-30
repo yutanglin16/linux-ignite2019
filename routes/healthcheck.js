@@ -6,13 +6,15 @@ var people = require("../animal.json");
 
 router.get('/', function(req, res, next) {
     const person = people.profiles[0];
-    
+
     if (person != null) {
-        console.log("App is healthy 👍.")
-        res.status(200);
+        const msg = "App is healthy 👍."
+        console.log(msg);
+        res.status(200).send(msg);
     } else {
-        console.warn("App is unhealthy 👎.")
-        res.status(500);
+        const msg = "App is unhealthy 👎.";
+        console.warn(msg)
+        res.status(500).send(msg);
     }
 });
 
