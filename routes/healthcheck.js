@@ -1,13 +1,12 @@
 var express = require('express');
 var router = express.Router();
 var people = require("../animal.json");
+var isHealthy = require("./healthMethods").isHealthy;
 
 /* GET healthstatus. */
 
 router.get('/', function(req, res, next) {
-    const person = people.profiles[0];
-
-    if (person != null) {
+    if (isHealthy() == true) {
         const msg = "App is healthy 👍."
         console.log(msg);
         res.status(200).send(msg);
