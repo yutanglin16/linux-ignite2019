@@ -1,18 +1,13 @@
 var express = require('express');
 var router = express.Router();
-var server = require("../bin/www")
-
-/* 
-    More info: https://stackoverflow.com/a/36830072/10265855
-    Kill the app. 
-*/
+var setHealth = require("./healthMethods").setHealth;
 
 router.get("/", (req, res) => {
     console.error("Oh no! 😨");
     console.error("Critical error! 💀");
-    console.error("The Express server is shutting down! 💀");
-
-    setImmediate(function(){server.emit('close')});
+    console.error("The app has gone unhealthy! 💀");
+    setHealth(false);
+    res.status(500).send("App is now unhealthy.");
 });
 
 module.exports = router;
