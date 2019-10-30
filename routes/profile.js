@@ -1,6 +1,6 @@
 var express = require('express');
 var router = express.Router();
-var people = require("../people.json");
+var people = require("../animal.json");
 
 /* GET users listing. */
 // router.get('/', function(req, res, next) {
