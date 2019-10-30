@@ -8,8 +8,8 @@ var router = express.Router();
 
 router.get('/', function(req, res, next) {
   console.error("Bad request");
-  // setImmediate(() => { next(new Error('woops')); });
-  res.status(400).send('Bad Request')
+  setImmediate(() => { next(new Error('woops')); });
+  //res.status(400).send('Bad Request')
 });
 
 module.exports = router;
