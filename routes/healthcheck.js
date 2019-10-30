@@ -6,6 +6,7 @@ var people = require("../animal.json");
 
 router.get('/', function(req, res, next) {
     const person = people.profiles[0];
+    
     if (person != null) {
         console.log("App is healthy 👍.")
         res.status(200);

@@ -28,7 +28,7 @@ app.use('/', usersRouter);
 // app.use('/users', usersRouter);
 app.use('/profile', profileRouter);
 app.use('/health', healthRouter);
-app.use('/killme', killRouter);
+app.use('/killapp', killRouter);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {
