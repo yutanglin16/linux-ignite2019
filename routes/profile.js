@@ -10,8 +10,9 @@ var indexRouter = require('./index');
 
 router.get("/", (req, res) => {
   const person = people.profiles.find(p => p.id === req.query.id);
-  console.log("Hello, " + person.firstname);
+  console.log('Showing profile: ' + person.firstname + ' ' + person.lastname);
   if (person.lastname == 'Alpaca') {
+    console.error("Error 404 -- " + person.firstname + ' ' + person.lastname + ' not found.');
     res.render("error", {
       message: 'Sorry, no ' + person.firstname + ' ' + person.lastname + ' found.',
       error: {
