@@ -17,7 +17,7 @@ router.get("/", (req, res) => {
       message: 'Sorry, no ' + person.firstname + ' ' + person.lastname + ' found.',
       error: {
         status: '404 Error',
-        stack: person.firstname + ' ' + person.lastname + ' has found a new home.'
+        stack: 'We are experiencing issues locating ' + person.firstname + ' ' + person.lastname + '.'
       }
     });
     res.status(404);
